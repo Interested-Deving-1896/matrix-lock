@@ -1,39 +1,29 @@
-<p align="center" style="text-align: center">
-  <a href="https://github.com/rakles/matrix-lock">
-    <img alt="Matrix Lock Logo" src=".github/icon.png" width="128" height="128" />
-  </a>
-</p>
+# matrix-lock
 
-<h3 align="center">Matrix Lock</h3>
-<p align="center">
-    allows job sequencing within matrix workflows with controlled execution
-</p>
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/matrix-lock) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria) [![Energy](https://api.green-coding.io/v1/ci/badge/get?repo=Interested-Deving-1896%2Fmatrix-lock&branch=main&workflow=eco-audit.yml)](https://metrics.green-coding.io/ci-index.html)
 
-<div align="center">
 
-<a href="https://github.com/rakles/matrix-lock/blob/main/LICENSE">![MIT License](https://img.shields.io/github/license/rakles/matrix-lock)</a>
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-</div>
+## Architecture
 
-## About
-Matrix Lock is a GitHub Action designed to control the execution order of jobs in GitHub Action workflows, especially when dealing with matrix builds that need to run certain jobs sequentially. It ensures that only one job proceeds at a time based on a predefined order, thus preventing race conditions and conflicts.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-## How it Works
-The action utilizes a lock file mechanism to manage workflow concurrency. It works in three main steps:
+## Install
 
-1. **Initialization (`init`):** Establishes the order in which jobs should execute.
-2. **Waiting (`wait`):** Jobs check the lock file and wait for their turn to proceed.
-3. **Continuation (`continue`):** A job moves itself to the next position, allowing the subsequent job to proceed.
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-## Inputs
-
-- `step` (**required**): The operation that the action should perform. Valid values are `init`, `wait`, and `continue`.
-- `order`: Specifies the order for the whole process. Required for the `init` step.
-- `id`: The unique identifier for each job. Required for `wait` and `continue` steps.
-- `retry-count`: The number of attempts a job should make to acquire the lock before failing. Default is 6.
-- `retry-delay`: The time (in seconds) between each retry attempt. Default is 10.
+```bash
+git clone https://github.com/Interested-Deving-1896/matrix-lock.git
+cd matrix-lock
+```
 
 ## Usage
+
 
 ### Workflow Configuration
 
@@ -82,3 +72,67 @@ In this example:
 - The first job (with `id: some-id-1`) initializes the lock.
 - Each job waits for its turn based on the `id`.
 - After a job completes its steps, it continues the lock to allow the next job to start.
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/matrix-lock`](https://github.com/Interested-Deving-1896/matrix-lock) and mirrored through:
+
+```
+Interested-Deving-1896/matrix-lock  ──►  OpenOS-Project-OSP/matrix-lock  ──►  OpenOS-Project-Ecosystem-OOC/matrix-lock
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/matrix-lock/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/matrix-lock/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/matrix-lock/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
